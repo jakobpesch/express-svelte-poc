@@ -2,10 +2,14 @@
   "name": "express-svelte-poc",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "./server/app.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/app.js",
+    "dev": "NODE_ENV=development npm-run-all --parallel dev:api dev:client",
+    "dev:api": "NODE_ENV=development CLIENT=false nodemon --ignore client ./server/app.js",
+    "dev:client": "NODE_ENV=development npm run dev --prefix client",
+    "start": "npm run build --prefix client && NODE_ENV=production CLIENT=true node ./server/app.js",
+    "build": "npm run build --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +18,8 @@
     "express": "^4.18.2"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.4.3"
   }
 }

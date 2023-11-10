@@ -2,6 +2,5 @@
     export let data
 </script>
 
-<h1>Welcome to SvelteKit!!!</h1>
-<div>{JSON.stringify(data)}</div>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1>Hello</h1>
+<div style="white-space: pre;">{JSON.stringify(data, null, 2)}</div>

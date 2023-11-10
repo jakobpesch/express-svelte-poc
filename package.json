@@ -9,8 +9,7 @@
     "dev:api": "NODE_ENV=development CLIENT=false nodemon --ignore client ./server/app.js",
     "dev:client": "NODE_ENV=development npm run dev --prefix client",
     "start": "npm run build --prefix client && NODE_ENV=production CLIENT=true node ./server/app.js",
-    "build": "npm run build --prefix client",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
